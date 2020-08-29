@@ -252,11 +252,10 @@ console.log(get20s(artists,9,2));
 */
 function removeArtist(array,index) {
   array.splice(index,1);
-  console.log(array[index]);
-
+  console.log(`The number of artists in the array AFTER removeArtist: ${array.length}`)
 }
-console.log(`The number of artists in the array: ${array.length}`,removeArtist(artists,0))
-console.log(`The number of artists in the array after removeArtist: ${array.length}`)
+console.log(`The number of artists in the array BEFORE removeArtist: ${artists.length}`)
+removeArtist(artists,0)
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -271,11 +270,13 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-  /* Code here */
-
+function addArtist(array,id,name,years,genre,nationality,bio){
+  const array2 = array.concat({id,name,years,genre,nationality,bio})
+  // array.push({id,name,years,genre,nationality,bio});
+  console.log("Task 6, addArtist -> array2", array2)
+  return(array2[20]);
 }
+addArtist(artists,21,'Gregory Somers','1971 - ???','Web Design','United States','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus felis non turpis posuere, et viverra tortor rhoncus.');
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument:
 
@@ -284,15 +285,16 @@ function addArtist(/* Code here */){
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
-
-function lotsOfArt(/* Code here */){
-
-/* Code here */
-
+let topPainters = [];
+function lotsOfArt(array){
+  for (let i = 0; i < array.length -1; i++) {
+    if (array[i].paintings > 100) {
+      topPainters.push(array[i].name)}
+    }
+  return topPainters;
 }
-
-
-
+console.log(lotsOfArt(artists));
+console.log("lotsOfArt -> topPainter", topPainters) // verify return
 // 🎨🎨 STRETCH 🎨🎨//
 
 
