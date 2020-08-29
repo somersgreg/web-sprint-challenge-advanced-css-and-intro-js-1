@@ -2,11 +2,11 @@
 /*BREAKPIONTS*/
 @media(max-width: 800px) {
     body{
-    background-color: black;}
+    background-color: rgb(194, 216, 69);}
 }
 @media(max-width: 500px) {
     body {
-    background-color: black;}
+    background-color: rgb(197, 144, 194);}
 }
 
 /*GENERAL STYLES*/
